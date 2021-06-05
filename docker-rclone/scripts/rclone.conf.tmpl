@@ -1,0 +1,9 @@
+[minio]
+type = s3
+provider = Minio
+env_auth = false
+region = us-east-1
+acl = bucket-owner-full-control
+access_key_id = ${s3_access_key_id}
+secret_access_key = ${s3_secret_access_key}
+endpoint = ${s3_endpoint}
