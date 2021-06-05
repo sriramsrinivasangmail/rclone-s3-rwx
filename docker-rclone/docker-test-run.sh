@@ -20,6 +20,6 @@ fi
  
 
 docker rm --force ${container_name}
-docker run --name ${container_name} --privileged --user=root --env-file ${s3secretfile}  -d ${docker_image_name}:${docker_image_tag}
+docker run --name ${container_name} --device /dev/fuse --cap-add SYS_ADMIN --user=daemon --env-file ${s3secretfile}  -d ${docker_image_name}:${docker_image_tag}
 
 

@@ -15,4 +15,8 @@ EOF
 
 #cat ${RCLONE_CONFIG}
 
-rclone mount --dir-cache-time 1m0s --poll-interval 0m30s minio:/${s3_bucket_name} /root/user-home --log-level DEBUG
+date
+echo " mounting ${s3_bucket_name} from ${s3_endpoint} "
+rclone mount --dir-cache-time 1m0s --poll-interval 0m30s -vv --vfs-cache-mode full --cache-dir /vfs-cache --no-modtime minio:${s3_bucket_name} /user-home 
+
+#--log-level DEBUG

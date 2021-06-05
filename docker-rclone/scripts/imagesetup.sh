@@ -18,6 +18,11 @@ microdnf install -y fuse
 #fuse-devel
 
 # Make user-home folder that will be the mount for the remote minIO server
-mkdir /root/user-home
-chmod 777 /root/user-home
+mkdir /user-home
+# we need a non-root user to be able to fuse mount it here
+chmod 777 /user-home
+
+# for rclone vfs to use (as non root)
+mkdir /vfs-cache
+chmod 777 /vfs-cache
 
